@@ -62,7 +62,7 @@ struct HomePage {
       .width('100%')
 
       //底端选择栏
-      bottomChooser()
+      bottomChooser({homePagePic:$r('app.media.homePage_true')});
     }
     .height('100%')
     .width('100%')
