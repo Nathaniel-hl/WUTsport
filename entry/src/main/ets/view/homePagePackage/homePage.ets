@@ -69,6 +69,6 @@ struct HomePage {
   }
   //获取当前日期
   getCurTime() {
-    this.date.toString()
+    
   }
 }

@@ -1,6 +1,6 @@
 @Component
 export default struct bottomChooser{
-  homePagePic:Resource=$r('app.media.homePage_false')
+  homePagePic:Resource=$r('app.media.homePage_true')
   exercisePic:Resource=$r('app.media.exercisePage_false')
   communityPic:Resource=$r("app.media.communityPage_false")
   minePic:Resource=$r('app.media.minePage_false')
@@ -23,25 +23,46 @@ export default struct bottomChooser{
     }
   }
   build(){
-    Row(10){
+    Row({space:10}){
       Column(){
         Image(this.homePagePic)
+          .width('10%')
+          .autoResize(true)
         Text('首页')
       }
+
       Column(){
         Image(this.exercisePic)
+          .width('10%')
+          .autoResize(true)
         Text('运动')
       }
+
       Image($r('app.media.speakInputIcon'))
+      .width('30%')
+      .height('70%')
+      .padding({bottom:10})
+
       Column(){
         Image(this.communityPic)
+          .width('10%')
+          .autoResize(true)
         Text('社区')
+      }
+
+      Column(){
+        Image(this.minePic)
+          .width('5%')
+          .height('30%')
+          .autoResize(true)
+        Text('我的')
       }
     }
     .justifyContent(FlexAlign.SpaceAround)
     .width('100%')
     .height('20%')
     .backgroundColor($r('app.color.bottom_chooser_color'))
+    .alignItems(VerticalAlign.Center)
   }
 
 }
