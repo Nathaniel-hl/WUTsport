@@ -1,10 +1,13 @@
-import bottomChooser from '../../bottomChooser'
+import bottomChooser, { BotIconPattern } from '../../bottomChooser'
 import searchHeader from './searchHeader'
+import systemDateTime from '@ohos.systemDateTime';
+
 @Entry
 @Component
 struct HomePage {
   @State message: string = 'Hello World'
-  date:Date      //当前日期
+  date:Date    //当前日期
+
   build() {
     Column({space:20})
     {
@@ -69,6 +72,18 @@ struct HomePage {
   }
   //获取当前日期
   getCurTime() {
-    
+    try {
+      systemDateTime.getCurrentTime(false, (error:Error, time: number) => {
+        if (error) {
+          console.info(`Failed to get currentTime. message: ${error.message}, code: ${error}`);
+          return;
+        }
+        this.date=new Date(time);
+        console.info(`Succeeded in getting currentTime : ${time}`);
+      });
+    } catch(e) {
+      let error = e as Error;
+      console.info(`Failed to get currentTime. message: ${error.message}, code: ${error}`);
+    }
   }
 }

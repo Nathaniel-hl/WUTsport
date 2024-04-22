@@ -1,9 +1,9 @@
 @Component
 export default struct bottomChooser{
-  homePagePic:Resource=$r('app.media.homePage_true')
-  exercisePic:Resource=$r('app.media.exercisePage_false')
-  communityPic:Resource=$r("app.media.communityPage_false")
-  minePic:Resource=$r('app.media.minePage_false')
+  @State homePagePic:Resource=$r('app.media.homePage_false')
+  @State exercisePic:Resource=$r('app.media.exercisePage_false')
+  @State communityPic:Resource=$r("app.media.communityPage_false")
+  @State minePic:Resource=$r('app.media.minePage_false')
 
   bottomChooser(pattern:BotIconPattern){
     switch (pattern)
@@ -67,7 +67,7 @@ export default struct bottomChooser{
 
 }
 //底部选择页面样式
-declare enum BotIconPattern{
+export declare enum BotIconPattern{
   Home,//选择首页
   Exercise,//选择运动页面
   Community,//选择社区
