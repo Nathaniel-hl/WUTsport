@@ -1,10 +1,11 @@
 {
   "src": [
     "pages/Index",
-    "view/homePagePackage/homePage",
-    "view/exercisePagePackage/exercisePage",
-    "view/communityPage/CommunityPage",
-    "view/minePage/minePage",
-    "view/WelcomePagePackage/WelcomePage"
+    "view/HomePagePackage/HomePage",
+    "view/ExercisePagePackage/ExercisePage",
+    "view/CommunityPage/CommunityPage",
+    "view/MinePagePackage/MinePage",
+    "view/WelcomePagePackage/WelcomePage",
+    "view/GuidancePagePackage/GuidancePage"
   ]
 }

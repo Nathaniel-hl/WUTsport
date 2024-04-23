@@ -24,7 +24,7 @@ export default struct bottomChooser{
             }
             else {
               router.replaceUrl({
-                url:'view/homePagePackage/homePage'
+                url:'view/homePagePackage/HomePage'
               })
             }
           })
@@ -43,7 +43,7 @@ export default struct bottomChooser{
             }
             else {
               router.replaceUrl({
-                url:'view/exercisePagePackage/exercisePage'
+                url:'view/exercisePagePackage/ExercisePage'
               })
             }
           })
@@ -87,7 +87,7 @@ export default struct bottomChooser{
               return
             }else{
               router.replaceUrl({
-                url:'view/minePage/minePage'
+                url:'view/minePage/MinePage'
               })
             }
           })

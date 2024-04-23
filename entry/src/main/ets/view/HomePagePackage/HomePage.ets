@@ -6,7 +6,11 @@ import systemDateTime from '@ohos.systemDateTime';
 @Component
 struct HomePage {
   @State message: string = 'Hello World'
-  date:Date    //当前日期
+  date:Date=new Date()    //当前日期
+
+  aboutToAppear(){
+    this.getCurTime()
+  }
 
   build() {
     Column({space:20})
@@ -23,7 +27,7 @@ struct HomePage {
       .alignItems(VerticalAlign.Bottom)
 
       //我的步行+日期
-      Text(' 我的步行 12月1日')
+      Text(' 我的步行 '+this.getCurTime())
         .fontSize(25)
         .fontWeight(4)
         .opacity(0.9)//设置透明度
@@ -72,16 +76,17 @@ struct HomePage {
     .justifyContent(FlexAlign.Start)
     .alignItems(HorizontalAlign.Start)
   }
-  //获取当前日期
+  //获取当前日期//未实现
   getCurTime() {
+    return '12月1日'
     try {
       systemDateTime.getCurrentTime(false, (error:Error, time: number) => {
         if (error) {
           console.info(`Failed to get currentTime. message: ${error.message}, code: ${error}`);
           return;
         }
-        this.date=new Date(time);
-        console.info(`Succeeded in getting currentTime : ${time}`);
+
+        console.log(`Succeeded in getting currentTime : ${time}`);
       });
     } catch(e) {
       let error = e as Error;

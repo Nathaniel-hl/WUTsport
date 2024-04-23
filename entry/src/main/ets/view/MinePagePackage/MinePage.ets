@@ -1,10 +1,9 @@
 import bottomChooser from '../../bottomChooser'
+import PreferencesUtil from 'ets/common/util/PreferencesUtil'
 @Entry
 @Component
 struct MinePage {
   @State message: string = 'Hello World'
-  p:Position
-  l:Length=10
 
   build() {
     Row() {
