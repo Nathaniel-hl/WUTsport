@@ -1,5 +1,5 @@
 import bottomChooser from '../../bottomChooser'
-import PreferencesUtil from 'ets/common/util/PreferencesUtil'
+
 @Entry
 @Component
 struct MinePage {

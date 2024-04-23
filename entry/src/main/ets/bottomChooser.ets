@@ -24,7 +24,7 @@ export default struct bottomChooser{
             }
             else {
               router.replaceUrl({
-                url:'view/homePagePackage/HomePage'
+                url:'view/HomePagePackage/HomePage'
               })
             }
           })
@@ -43,7 +43,7 @@ export default struct bottomChooser{
             }
             else {
               router.replaceUrl({
-                url:'view/exercisePagePackage/ExercisePage'
+                url:'view/ExercisePagePackage/ExercisePage'
               })
             }
           })
@@ -68,7 +68,7 @@ export default struct bottomChooser{
             }
             else {
               router.replaceUrl({
-                url:'view/communityPage/CommunityPage'
+                url:'view/CommunityPage/CommunityPage'
               })
             }
           })
@@ -87,7 +87,7 @@ export default struct bottomChooser{
               return
             }else{
               router.replaceUrl({
-                url:'view/minePage/MinePage'
+                url:'view/MinePagePackage/MinePage'
               })
             }
           })

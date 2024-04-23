@@ -6,6 +6,7 @@
     "view/CommunityPage/CommunityPage",
     "view/MinePagePackage/MinePage",
     "view/WelcomePagePackage/WelcomePage",
-    "view/GuidancePagePackage/GuidancePage"
+    "view/GuidancePagePackage/GuidancePage",
+    "view/GuidancePagePackage/DataChoice_Gender_Age"
   ]
 }
