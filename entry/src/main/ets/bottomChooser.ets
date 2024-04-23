@@ -1,60 +1,96 @@
+import image from '@ohos.multimedia.image'
+import router from '@ohos.router'
+@Preview
 @Component
 export default struct bottomChooser{
-  @State homePagePic:Resource=$r('app.media.homePage_false')
-  @State exercisePic:Resource=$r('app.media.exercisePage_false')
-  @State communityPic:Resource=$r("app.media.communityPage_false")
-  @State minePic:Resource=$r('app.media.minePage_false')
 
-  bottomChooser(pattern:BotIconPattern){
-    switch (pattern)
-    {
-      case BotIconPattern.Home:
-      this.homePagePic=$r('app.media.homePage_true')
-      break
-      case BotIconPattern.Exercise:
-      this.exercisePic=$r('app.media.exercisePage_true')
-      break
-      case BotIconPattern.Community:
-      this.communityPic=$r('app.media.communityPage_true')
-      break
-      case BotIconPattern.Mine:
-      this.minePic=$r('app.media.minePage_true')
-      break
-    }
-  }
+  //判断当前页面选择
+  isHomePage:Boolean=false
+  isExercisePage:Boolean=false
+  isCommunityPage:Boolean=false
+  isMinePage:Boolean=false
+
   build(){
     Row({space:10}){
+      //首页图标
       Column(){
-        Image(this.homePagePic)
+        Image(this.isHomePage?$r('app.media.homePage_true'):$r('app.media.homePage_false'))
           .width('10%')
           .autoResize(true)
+          //点击事件，如果当前不为首页则跳转至首页
+          .onClick(()=>{
+            if(this.isHomePage){
+              return
+            }
+            else {
+              router.replaceUrl({
+                url:'view/homePagePackage/homePage'
+              })
+            }
+          })
         Text('首页')
       }
 
+      //运动图标
       Column(){
-        Image(this.exercisePic)
+        Image(this.isExercisePage?$r('app.media.exercisePage_true'):$r('app.media.exercisePage_false'))
           .width('10%')
           .autoResize(true)
+            //点击事件，如果当前不为运动页面则跳转至运动页面
+          .onClick(()=>{
+            if(this.isExercisePage){
+              return
+            }
+            else {
+              router.replaceUrl({
+                url:'view/exercisePagePackage/exercisePage'
+              })
+            }
+          })
         Text('运动')
       }
 
+      //语音输入图标
       Image($r('app.media.speakInputIcon'))
-      .width('30%')
-      .height('70%')
+      .width('31%')
+      .height('72%')
       .padding({bottom:10})
 
+      //社区图标
       Column(){
-        Image(this.communityPic)
+        Image(this.isCommunityPage?$r('app.media.communityPage_true'):$r('app.media.communityPage_false'))
           .width('10%')
           .autoResize(true)
+            //点击事件，如果不为社区页面则跳转至社区页面
+          .onClick(()=>{
+            if(this.isCommunityPage){
+              return
+            }
+            else {
+              router.replaceUrl({
+                url:'view/communityPage/CommunityPage'
+              })
+            }
+          })
         Text('社区')
       }
 
+      //我的图标
       Column(){
-        Image(this.minePic)
+        Image(this.isMinePage?$r('app.media.minePage_true'):$r('app.media.minePage_false'))
           .width('5%')
           .height('30%')
           .autoResize(true)
+          .onClick(()=>
+          {
+            if(this.isMinePage){
+              return
+            }else{
+              router.replaceUrl({
+                url:'view/minePage/minePage'
+              })
+            }
+          })
         Text('我的')
       }
     }
@@ -72,4 +108,7 @@ export declare enum BotIconPattern{
   Exercise,//选择运动页面
   Community,//选择社区
   Mine//选择我的
+}
+@Extend(Image) function iconStyle() {
+
 }

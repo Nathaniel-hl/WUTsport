@@ -16,6 +16,7 @@ struct HomePage {
         Text('首页')
           .fontSize(40)
           .padding({left:10})
+          .opacity(0.9)
         searchHeader()
       }
       .height('10%')
@@ -25,6 +26,7 @@ struct HomePage {
       Text(' 我的步行 12月1日')
         .fontSize(25)
         .fontWeight(4)
+        .opacity(0.9)//设置透明度
 
       //步数图案
       Image($r('app.media.stepNumPic'))
@@ -62,7 +64,7 @@ struct HomePage {
       .width('100%')
 
       //底端选择栏
-      bottomChooser({homePagePic:$r('app.media.homePage_true')});
+      bottomChooser({isHomePage:true});
     }
     .height('100%')
     .width('100%')
