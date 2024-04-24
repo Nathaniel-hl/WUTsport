@@ -96,7 +96,7 @@ struct DataChoice_Gender_Age {
 
       Blank()
 
-      bottomNextStep()
+      bottomNextStep({index:1})
 
     }
     .height('100%')

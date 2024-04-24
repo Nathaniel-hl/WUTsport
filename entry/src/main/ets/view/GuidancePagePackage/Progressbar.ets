@@ -6,7 +6,7 @@ export default struct Progressbar{
       .size({ width: '90%' })
       .color($r('app.color.themes_color'))
       .backgroundColor($r('app.color.bottom_chooser_color'))
-      .style({ strokeWidth: 15 })
-      .padding('5%')
+      .style({ strokeWidth: 18 })
+      .padding({top:30})
   }
 }

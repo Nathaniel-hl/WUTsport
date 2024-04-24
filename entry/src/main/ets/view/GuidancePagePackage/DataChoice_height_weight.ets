@@ -75,7 +75,7 @@ struct DataChoice_height_weight {
 
       //底部页面切换
       Blank()
-      bottomNextStep()
+      bottomNextStep({index:2})
     }
     .height('100%')
     .width('100%')

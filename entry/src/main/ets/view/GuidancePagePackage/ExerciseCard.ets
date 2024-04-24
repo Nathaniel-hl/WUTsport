@@ -1,0 +1,69 @@
+@Preview
+@Component
+export default struct ExerciseCard{
+  private exercises:exercise[]=[
+    new exercise('行走',$r('app.media.walkPic')),
+    new exercise('跑步',$r('app.media.runningPic')),
+    new exercise('游泳',$r('app.media.swimPic')),
+    new exercise('骑行',$r('app.media.bicyclePic')),
+    new exercise('舞蹈',$r('app.media.dancePic')),
+    new exercise('瑜伽',$r('app.media.yogaPic')),
+    new exercise('羽毛球',$r('app.media.walkPic')),
+    new exercise('跳绳',$r('app.media.runningPic'))
+  ]
+  index:number = 2;
+
+  @State backgroundPic:Resource=$r('app.media.card_false')
+
+  @State textColor:Color=Color.Black
+
+  @State isChoice:Boolean = false
+
+  build(){
+    Column(){
+      Blank()
+      Image(this.exercises[this.index].image)
+        .padding({top:30})
+        .autoResize(true)
+        .size({width:'65%',height:'65%'})
+        .padding({left:10,right:10})
+
+
+      Row(){
+        Text(this.exercises[this.index].name)
+          .fontSize(23)
+          .padding({left:10})
+          .fontColor(this.textColor)
+        Blank()
+      }.width('100%')
+      .padding({bottom:10})
+
+    }.width('150')
+    .height('150')
+    .backgroundImage(this.backgroundPic)
+    .backgroundImageSize({height:'130%',width:'130%'})
+    .backgroundImagePosition({x:-50,y:-40})
+    .onClick(()=>{
+      if(this.textColor==Color.Black){
+        this.textColor=Color.White
+        this.backgroundPic=$r('app.media.card_true')
+        this.isChoice=true
+      }else{
+        this.isChoice=false
+        this.backgroundPic=$r('app.media.card_false')
+        this.textColor=Color.Black
+      }
+
+    })
+
+  }
+}
+class exercise{
+  name:string
+  image:Resource
+
+  constructor(name:string,image:Resource) {
+    this.name=name
+    this.image=image
+  }
+}

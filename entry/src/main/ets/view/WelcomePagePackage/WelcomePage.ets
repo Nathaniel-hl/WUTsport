@@ -17,29 +17,35 @@ struct WelcomePage {
 
   build() {
     Column() {
+      Blank('30%')
       //中央slogan
-      Text('这是欢迎页面')
-        .fontSize(100)
-        .onClick(
-          () => {
-            this.jumpToHomePage()
-          }
-        )
+      Column(){
+        Image($r('app.media.appIconPic'))
+          .size({width:'150',height:'60%'})
+          .interpolation(ImageInterpolation.Medium)
+
+        Image($r('app.media.appNamePic'))
+          .height('15%')
+          .padding({left:'35'})
+
+      }
+      .height('30%')
+
+      Blank('30%')
+
+      //文字描述
+      Text('基于情感化设计理论 大学生运动app')
+        .fontSize(15)
+        .opacity(0.5)
+
 
       //logo
 
-      //文字描述
+
     }
     .height('100%')
     .width('100%')
     .backgroundColor($r('app.color.background_color'))
-  }
-  //跳转到主页
-  jumpToHomePage() {
-    router.replaceUrl(
-      {
-        url: 'view/HomePagePackage/HomePage'
-      }
-    )
+    .justifyContent(FlexAlign.Center)
   }
 }
