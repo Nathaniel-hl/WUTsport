@@ -71,6 +71,7 @@ struct HomePage {
 
       //底端选择栏
       bottomChooser({ isHomePage: true });
+
     }
     .height('100%')
     .width('100%')
@@ -78,9 +79,9 @@ struct HomePage {
     .justifyContent(FlexAlign.Start)
     .alignItems(HorizontalAlign.Start)
   }
-  //获取当前日期
+  //获取当前日期//未实现
   getCurTime() {
-
+    return '4月21日'
     try {
       systemDateTime.getCurrentTime(false, (error: Error, time: number) => {
         if (error) {

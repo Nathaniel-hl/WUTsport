@@ -1,4 +1,5 @@
 import bottomChooser from '../../bottomChooser'
+import interestCard from './interestCard'
 
 @Entry
 @Component
@@ -10,6 +11,7 @@ struct MinePage {
   @State user_fans_num:number = 20
   @State user_concerns_num:number =25
   @State user_posts_num:number =15
+  @State user_coin_num:number = 18
   build() {
     Column() {
 
@@ -37,10 +39,10 @@ struct MinePage {
               .size({height:'80%',width:'30%'})
               .position({y:-40,x:-80})
               .interpolation(ImageInterpolation.Medium)
-              
+
 
             Blank(30)
-            //名称+标签
+            //名称+个性签名
             Column(){
               Text(this.user_name)
                 .fontSize(30)
@@ -62,16 +64,78 @@ struct MinePage {
 
         //兴趣栏
         Column(){
+          //兴趣栏文字
           Text('兴趣栏')
-          Row(){
 
+          //兴趣卡片
+          Row(){
+            interestCard({index:0,name:'跑步'})
+
+            interestCard({index:1,name:'骑行'})
+
+            interestCard({index:2,name:'游泳'})
           }
+          .justifyContent(FlexAlign.SpaceEvenly)
+          .width('100%')
         }
+        .height('15%')
+        .width('90%')
+        .backgroundColor(Color.White)
+        .borderRadius(20)
+
+        //其他页面选项
+        Column(){
+          //金币换奖品选项
+          Row(){
+            Text('金币换奖品')
+              .fontSize(25)
+            Text(`累计金币${this.user_coin_num}`)
+              .opacity(0.5)
+            Blank()
+            Text('>')
+              .fontSize(50)
+          }
+          .width('100%')
+          .height('30%')
+
+          Divider().width('100%')
+
+          //运动周月年报告跳转页面
+          Row(){
+            Text('运动周月年报告')
+              .fontSize(25)
+            Blank()
+            Text('>')
+              .fontSize(50)
+          }
+          .width('100%')
+          .height('30%')
+
+          Divider().width('100%')
+
+          //客服帮助跳转页面
+          Row(){
+            Text('客服帮助')
+              .fontSize(25)
+            Blank()
+            Text('>')
+              .fontSize(50)
+          }
+          .width('100%')
+          .height('30%')
+
+          Divider().width('100%')
+        }
+        .height('50%')
+        .backgroundColor(Color.White)
+        .width('90%')
+        .borderRadius(20)
 
       }
       .height('60%')
       .backgroundColor($r('app.color.background_color'))
       .width('100%')
+      .justifyContent(FlexAlign.SpaceBetween)
 
 
 
