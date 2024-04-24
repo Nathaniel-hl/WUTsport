@@ -43,6 +43,7 @@ export default struct DiseaseCard{
     .backgroundImage(this.backgroundPic)
     .backgroundImageSize({height:'130%',width:'130%'})
     .backgroundImagePosition({x:-50,y:-40})
+    .borderRadius(30)
     .onClick(()=>{
       if(this.textColor==Color.Black){
         this.textColor=Color.White

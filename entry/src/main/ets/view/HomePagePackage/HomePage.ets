@@ -57,12 +57,15 @@ struct HomePage {
           .width('50%')
           .height('100%')
           .autoResize(true)
+          .interpolation(ImageInterpolation.Medium)
+
 
         Image($r('app.media.activeDataPic2'))
           .height('100%')
           .width('50%')
           .autoResize(true)
           .padding({ left: 10, right: 10 })
+          .interpolation(ImageInterpolation.Medium)
       }.height('23%')
       .width('100%')
 
@@ -75,9 +78,9 @@ struct HomePage {
     .justifyContent(FlexAlign.Start)
     .alignItems(HorizontalAlign.Start)
   }
-  //获取当前日期//未实现
+  //获取当前日期
   getCurTime() {
-    return '12月1日'
+
     try {
       systemDateTime.getCurrentTime(false, (error: Error, time: number) => {
         if (error) {

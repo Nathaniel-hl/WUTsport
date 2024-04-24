@@ -46,9 +46,11 @@ struct DataChoicePage_like {
     Row(){
       ExerciseCard({index:l.index1})
         .padding({right:5})
+
       // Blank(15)
       ExerciseCard({index:l.index2})
         .padding({left:5})
+
     }
     .width('100%')
     .justifyContent(FlexAlign.Center)

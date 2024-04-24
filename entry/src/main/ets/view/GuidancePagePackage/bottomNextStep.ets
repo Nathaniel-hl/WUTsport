@@ -34,6 +34,7 @@ export default struct bottomNextStep {
       Image($r('app.media.speakInputIcon'))
         .width('31%')
         .height('72%')
+        .objectFit(ImageFit.Contain)
         .padding({ bottom: 10 })
 
       //下一页按钮

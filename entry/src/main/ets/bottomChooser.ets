@@ -56,6 +56,8 @@ export default struct bottomChooser {
         .width('31%')
         .height('72%')
         .padding({ bottom: 10 })
+        .objectFit(ImageFit.Contain)
+        .interpolation(ImageInterpolation.Medium)
 
       //社区图标
       Column() {
