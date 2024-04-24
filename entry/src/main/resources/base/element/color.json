@@ -11,6 +11,10 @@
     {
       "name": "bottom_chooser_color",
       "value": "#EED9BC"
+    },
+    {
+      "name": "themes_color",
+      "value": "#FE8109"
     }
   ]
 }

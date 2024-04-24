@@ -1,10 +1,9 @@
 import preferences from '@ohos.data.preferences';
 
-class PreferencesUtil{
-
+class PreferencesUtil {
   prefMap: Map<string, preferences.Preferences> = new Map()
 
-  async loadPreference(context, name: string){
+  async loadPreference(context, name: string) {
     try { // 加载preferences
       let pref = await preferences.getPreferences(context, name)
       this.prefMap.set(name, pref)
@@ -14,7 +13,7 @@ class PreferencesUtil{
     }
   }
 
-  async putPreferenceValue(name: string, key: string, value: preferences.ValueType){
+  async putPreferenceValue(name: string, key: string, value: preferences.ValueType) {
     if (!this.prefMap.has(name)) {
       console.log('testTag', `Preferences[${name}]尚未初始化！`)
       return
@@ -31,7 +30,7 @@ class PreferencesUtil{
     }
   }
 
-  async getPreferenceValue(name: string, key: string, defaultValue: preferences.ValueType){
+  async getPreferenceValue(name: string, key: string, defaultValue: preferences.ValueType) {
     if (!this.prefMap.has(name)) {
       console.log('testTag', `Preferences[${name}]尚未初始化！`)
       return

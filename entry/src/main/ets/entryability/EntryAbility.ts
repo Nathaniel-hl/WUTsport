@@ -6,7 +6,7 @@ import PreferencesUtil from '../common/util/PreferencesUtil'
 export default class EntryAbility extends UIAbility {
   async onCreate(want, launchParam) {
     hilog.info(0x0000, 'testTag', '%{public}s', 'Ability onCreate');
-    await PreferencesUtil.loadPreference(this.context,'test1')
+    await PreferencesUtil.loadPreference(this.context, 'test1')
   }
 
   onDestroy() {

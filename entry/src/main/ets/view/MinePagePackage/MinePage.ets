@@ -9,7 +9,7 @@ struct MinePage {
     Row() {
       Column() {
         Text('这是我的页面')
-        bottomChooser({isMinePage:true })
+        bottomChooser({ isMinePage: true })
       }
       .width('100%')
     }

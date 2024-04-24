@@ -1,15 +1,14 @@
-import bottomChooser from '../../bottomChooser'
-
 @Entry
 @Component
-struct CommunityPage {
+struct DataChoicePage_like {
   @State message: string = 'Hello World'
 
   build() {
     Row() {
       Column() {
-        Text('这是社区页面')
-        bottomChooser({ isCommunityPage: true })
+        Text(this.message)
+          .fontSize(50)
+          .fontWeight(FontWeight.Bold)
       }
       .width('100%')
     }

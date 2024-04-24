@@ -1,4 +1,5 @@
 import bottomChooser from '../../bottomChooser'
+
 @Entry
 @Component
 struct ExercisePage {
@@ -8,10 +9,11 @@ struct ExercisePage {
     Row() {
       Column() {
         Text('这是运动页面')
-        bottomChooser({isExercisePage:true})
+        bottomChooser({ isExercisePage: true })
       }
       .width('100%')
     }
     .height('100%')
+    .backgroundColor($r('app.color.background_color'))
   }
 }

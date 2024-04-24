@@ -7,20 +7,21 @@ import PreferencesUtil from 'ets/common/util/PreferencesUtil'
 struct WelcomePage {
   @State message: string = 'Hello World'
 
-  aboutToAppear(){
-    setTimeout(()=>{
+  aboutToAppear() {
+    setTimeout(() => {
       router.replaceUrl({
-        url:'view/GuidancePagePackage/GuidancePage'
+        url: 'view/GuidancePagePackage/GuidancePage'
       })
-    },1000)
+    }, 1000)
   }
+
   build() {
     Column() {
       //中央slogan
       Text('这是欢迎页面')
         .fontSize(100)
         .onClick(
-          ()=>{
+          () => {
             this.jumpToHomePage()
           }
         )
@@ -34,10 +35,10 @@ struct WelcomePage {
     .backgroundColor($r('app.color.background_color'))
   }
   //跳转到主页
-  jumpToHomePage(){
+  jumpToHomePage() {
     router.replaceUrl(
       {
-        url:'view/HomePagePackage/HomePage'
+        url: 'view/HomePagePackage/HomePage'
       }
     )
   }

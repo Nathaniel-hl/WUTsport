@@ -1,30 +1,31 @@
 import image from '@ohos.multimedia.image'
 import router from '@ohos.router'
+
 @Preview
 @Component
-export default struct bottomChooser{
+export default struct bottomChooser {
 
   //判断当前页面选择
-  isHomePage:Boolean=false
-  isExercisePage:Boolean=false
-  isCommunityPage:Boolean=false
-  isMinePage:Boolean=false
+  isHomePage: Boolean = false
+  isExercisePage: Boolean = false
+  isCommunityPage: Boolean = false
+  isMinePage: Boolean = false
 
-  build(){
-    Row({space:10}){
+  build() {
+    Row({ space: 10 }) {
       //首页图标
-      Column(){
-        Image(this.isHomePage?$r('app.media.homePage_true'):$r('app.media.homePage_false'))
+      Column() {
+        Image(this.isHomePage ? $r('app.media.homePage_true') : $r('app.media.homePage_false'))
           .width('10%')
           .autoResize(true)
-          //点击事件，如果当前不为首页则跳转至首页
-          .onClick(()=>{
-            if(this.isHomePage){
+            //点击事件，如果当前不为首页则跳转至首页
+          .onClick(() => {
+            if (this.isHomePage) {
               return
             }
             else {
               router.replaceUrl({
-                url:'view/HomePagePackage/HomePage'
+                url: 'view/HomePagePackage/HomePage'
               })
             }
           })
@@ -32,18 +33,18 @@ export default struct bottomChooser{
       }
 
       //运动图标
-      Column(){
-        Image(this.isExercisePage?$r('app.media.exercisePage_true'):$r('app.media.exercisePage_false'))
+      Column() {
+        Image(this.isExercisePage ? $r('app.media.exercisePage_true') : $r('app.media.exercisePage_false'))
           .width('10%')
           .autoResize(true)
             //点击事件，如果当前不为运动页面则跳转至运动页面
-          .onClick(()=>{
-            if(this.isExercisePage){
+          .onClick(() => {
+            if (this.isExercisePage) {
               return
             }
             else {
               router.replaceUrl({
-                url:'view/ExercisePagePackage/ExercisePage'
+                url: 'view/ExercisePagePackage/ExercisePage'
               })
             }
           })
@@ -52,23 +53,23 @@ export default struct bottomChooser{
 
       //语音输入图标
       Image($r('app.media.speakInputIcon'))
-      .width('31%')
-      .height('72%')
-      .padding({bottom:10})
+        .width('31%')
+        .height('72%')
+        .padding({ bottom: 10 })
 
       //社区图标
-      Column(){
-        Image(this.isCommunityPage?$r('app.media.communityPage_true'):$r('app.media.communityPage_false'))
+      Column() {
+        Image(this.isCommunityPage ? $r('app.media.communityPage_true') : $r('app.media.communityPage_false'))
           .width('10%')
           .autoResize(true)
             //点击事件，如果不为社区页面则跳转至社区页面
-          .onClick(()=>{
-            if(this.isCommunityPage){
+          .onClick(() => {
+            if (this.isCommunityPage) {
               return
             }
             else {
               router.replaceUrl({
-                url:'view/CommunityPage/CommunityPage'
+                url: 'view/CommunityPage/CommunityPage'
               })
             }
           })
@@ -76,18 +77,17 @@ export default struct bottomChooser{
       }
 
       //我的图标
-      Column(){
-        Image(this.isMinePage?$r('app.media.minePage_true'):$r('app.media.minePage_false'))
+      Column() {
+        Image(this.isMinePage ? $r('app.media.minePage_true') : $r('app.media.minePage_false'))
           .width('5%')
           .height('30%')
           .autoResize(true)
-          .onClick(()=>
-          {
-            if(this.isMinePage){
+          .onClick(() => {
+            if (this.isMinePage) {
               return
-            }else{
+            } else {
               router.replaceUrl({
-                url:'view/MinePagePackage/MinePage'
+                url: 'view/MinePagePackage/MinePage'
               })
             }
           })
@@ -100,15 +100,15 @@ export default struct bottomChooser{
     .backgroundColor($r('app.color.bottom_chooser_color'))
     .alignItems(VerticalAlign.Center)
   }
-
 }
 //底部选择页面样式
-export declare enum BotIconPattern{
-  Home,//选择首页
-  Exercise,//选择运动页面
-  Community,//选择社区
-  Mine//选择我的
+export declare enum BotIconPattern {
+  Home, //选择首页
+  Exercise, //选择运动页面
+  Community, //选择社区
+  Mine //选择我的
 }
+
 @Extend(Image) function iconStyle() {
 
 }

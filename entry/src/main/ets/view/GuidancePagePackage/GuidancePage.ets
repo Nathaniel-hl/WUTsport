@@ -1,4 +1,5 @@
 import router from '@ohos.router'
+
 @Entry
 @Component
 struct GuidancePage {
@@ -10,12 +11,12 @@ struct GuidancePage {
 
       Text('是否完善个人信息           ')
         .fontSize(30)
-        .padding({top:20,bottom:20,left:20})
+        .padding({ top: 20, bottom: 20, left: 20 })
         .opacity(0.9)
 
       Text('进行运动定制?')
         .fontSize(30)
-        .padding({bottom:10})
+        .padding({ bottom: 10 })
         .opacity(0.9)
 
       Image($r('app.media.guidancePic'))
@@ -23,18 +24,23 @@ struct GuidancePage {
         .height('45%')
 
       Button('开始定制')
-        .size({height:50,width:200})
+        .size({ height: 50, width: 200 })
         .fontSize(25)
+        .onClick(() => {
+          router.replaceUrl({
+            url: 'view/GuidancePagePackage/DataChoice_Gender_Age'
+          })
+        })
 
       Blank()
 
       Text('有丰富经验，跳过->')
         .fontSize(20)
         .opacity(0.7)
-        .padding({bottom:20})
-        .onClick(()=>{
+        .padding({ bottom: 20 })
+        .onClick(() => {
           router.replaceUrl({
-            url:'view/HomePagePackage/HomePage'
+            url: 'view/HomePagePackage/HomePage'
           })
         })
 
