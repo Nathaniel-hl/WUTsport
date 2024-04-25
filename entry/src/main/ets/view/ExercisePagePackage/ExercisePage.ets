@@ -1,6 +1,7 @@
 import bottomChooser from '../../bottomChooser'
 import ExerciseCard from '../GuidancePagePackage/exerciseCard'
 import HealthDataCard from './HealthDataCard'
+import router from '@ohos.router'
 
 @Entry
 @Component
@@ -8,11 +9,13 @@ struct ExercisePage {
   @State message: string = 'Hello World'
   @State user_coin_num :number = 18
 
+  //每日打卡名称+时长数组
   private items:listItem[]=[
     new listItem('连续步行',20,true),
     new listItem('平衡训练',10,false),
     new listItem('全身拉伸',10,false),
     new listItem('自由运动',20,false),
+    new listItem('眼睛保护',5,false),
   ]
   build() {
     Column() {
@@ -75,6 +78,11 @@ struct ExercisePage {
                     .borderWidth(1)
                 }else{
                   Button('去完成')
+                    .onClick(()=>{
+                      router.pushUrl({
+                        url:"view/ExercisePagePackage/ExercisePage2"
+                      })
+                    })
                 }
               }
               .justifyContent(FlexAlign.Start)
@@ -105,15 +113,25 @@ struct ExercisePage {
       .width('100%')
       .alignItems(VerticalAlign.Bottom)
 
-      //健康数据图片
-      Row(){
-        HealthDataCard({index:0})
-        Blank(20)
-        HealthDataCard({index:1})
-      }.justifyContent(FlexAlign.SpaceEvenly)
+      Blank(10)
 
-      //底部页面跳转
+      //健康数据图片
+      List({space: 10}){
+        ListItem(){
+          HealthDataCard({index:0})
+        }.padding({left:10})
+        ListItem(){
+          HealthDataCard({index:1})
+        }
+        ListItem(){
+          HealthDataCard({index:2})
+        }
+      }.width('100%')
+      .listDirection(Axis.Horizontal)
+      .height('20%')
+
       Blank()
+      //底部页面跳转
       bottomChooser({isExercisePage:true})
     }
     .width('100%')

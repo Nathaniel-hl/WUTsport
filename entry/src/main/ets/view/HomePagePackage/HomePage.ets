@@ -36,6 +36,7 @@ struct HomePage {
         .width('100%')
         .height('30%')
         .padding({ left: 15, right: 15 })
+        .opacity(0.8)
 
       //活动数据+编辑按钮
       Row() {
@@ -58,6 +59,7 @@ struct HomePage {
           .height('100%')
           .autoResize(true)
           .interpolation(ImageInterpolation.Medium)
+          .borderRadius(20)
 
 
         Image($r('app.media.activeDataPic2'))
@@ -66,10 +68,12 @@ struct HomePage {
           .autoResize(true)
           .padding({ left: 10, right: 10 })
           .interpolation(ImageInterpolation.Medium)
-      }.height('23%')
+          .borderRadius(20)
+      }.height('20%')
       .width('100%')
 
       //底端选择栏
+      Blank()
       bottomChooser({ isHomePage: true });
 
     }

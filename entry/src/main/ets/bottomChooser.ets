@@ -98,7 +98,7 @@ export default struct bottomChooser {
     }
     .justifyContent(FlexAlign.SpaceAround)
     .width('100%')
-    .height('20%')
+    .height('15%')
     .backgroundColor($r('app.color.bottom_chooser_color'))
     .alignItems(VerticalAlign.Center)
   }
