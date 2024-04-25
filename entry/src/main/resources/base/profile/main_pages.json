@@ -13,6 +13,10 @@
     "view/GuidancePagePackage/DataChoicePage_like",
     "view/ExercisePagePackage/ExercisePage2",
     "view/CommunityPage/CommunityPage2",
-    "view/StepDetailPagePackage/StepDetailPage_day"
+    "view/StepDetailPagePackage/StepDetailPage_day",
+    "view/StepDetailPagePackage/StepDetailPage_week",
+    "view/StepDetailPagePackage/StepDetailPage_month",
+    "view/StepDetailPagePackage/StepDetailPage_year",
+    "view/MinePagePackage/CoinMallPage"
   ]
 }

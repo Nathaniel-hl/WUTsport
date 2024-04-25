@@ -1,3 +1,4 @@
+import router from '@ohos.router';
 @Extend(Text)function textPattern(){
   .fontSize(35)
   .fontColor(Color.White)
@@ -45,6 +46,11 @@ export default struct TimeChooser{
         .width('25%')
         .height('100%')
         .justifyContent(FlexAlign.Center)
+        .onClick(()=>{
+          if(this.time!=timeChooser.Day){
+            router.pushUrl({url:"view/StepDetailPagePackage/StepDetailPage_day"})
+          }
+        })
 
         Row(){
           Text('周')
@@ -53,6 +59,11 @@ export default struct TimeChooser{
         .width('25%')
         .height('100%')
         .justifyContent(FlexAlign.Center)
+        .onClick(()=>{
+          if(this.time!=timeChooser.Week){
+            router.pushUrl({url:"view/StepDetailPagePackage/StepDetailPage_week"})
+          }
+        })
 
         Row(){
           Text('月')
@@ -61,7 +72,11 @@ export default struct TimeChooser{
         .width('25%')
         .height('100%')
         .justifyContent(FlexAlign.Center)
-
+        .onClick(()=>{
+          if(this.time!=timeChooser.Month){
+            router.pushUrl({url:"view/StepDetailPagePackage/StepDetailPage_month"})
+          }
+        })
         Row(){
           Text('年')
             .textPattern()
@@ -69,6 +84,11 @@ export default struct TimeChooser{
         .width('25%')
         .height('100%')
         .justifyContent(FlexAlign.Center)
+        .onClick(()=>{
+          if(this.time!=timeChooser.Year){
+            router.pushUrl({url:"view/StepDetailPagePackage/StepDetailPage_year"})
+          }
+        })
       }
       .width('100%')
 

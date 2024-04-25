@@ -1,6 +1,7 @@
 import bottomChooser, { BotIconPattern } from '../../bottomChooser'
 import searchHeader from './searchHeader'
 import systemDateTime from '@ohos.systemDateTime';
+import router from '@ohos.router';
 
 @Entry
 @Component
@@ -37,6 +38,11 @@ struct HomePage {
         .height('30%')
         .padding({ left: 15, right: 15 })
         .opacity(0.8)
+        .onClick(()=>{
+          router.pushUrl({
+            url:"view/StepDetailPagePackage/StepDetailPage_day"
+          })
+        })
 
       //活动数据+编辑按钮
       Row() {
