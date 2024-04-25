@@ -31,7 +31,7 @@ export default struct TimeChooser{
         Image('/view/StepDetailPagePackage/timeChooser_pic.png')
           .width('25%')
           .height('105%')
-          .position({x:this.imagePosition,y:-28})
+          .position({x:this.imagePosition,y:-20})
           .objectFit(ImageFit.Fill)
       }
       .width('100%')
@@ -75,8 +75,8 @@ export default struct TimeChooser{
 
     }
     .borderRadius(22)
-    .height('7%')
-    .width('90%')
+    .height('5%')
+    //.width('90%')
     .backgroundColor(Color.Black)
 
 
