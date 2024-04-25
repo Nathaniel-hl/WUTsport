@@ -1,18 +1,46 @@
+@Extend(Text)function textPattern(){
+  .fontSize(35)
+  .fontColor(Color.White)
+  .opacity(0.6)
+}
 @Preview
 @Component
 export default struct TimeChooser{
-  time:timeChooser
+  time:timeChooser=timeChooser.Week
+  imagePosition:Length=0;
+
+  aboutToAppear(){
+    switch (this.time){
+      case timeChooser.Day:
+      this.imagePosition=0
+      break
+      case timeChooser.Week:
+      this.imagePosition='25%'
+      break
+      case  timeChooser.Month:
+      this.imagePosition='50%'
+      break
+      case  timeChooser.Year:
+      this.imagePosition='75%'
+      break
+    }
+  }
   build(){
     Stack(){
-      Image('/view/StepDetailPagePackage/timeChooser_pic.png')
-        .width('28%')
-        .height('100%')
-      
+      Row(){
+        Image('/view/StepDetailPagePackage/timeChooser_pic.png')
+          .width('25%')
+          .height('105%')
+          .position({x:this.imagePosition,y:-28})
+          .objectFit(ImageFit.Fill)
+      }
+      .width('100%')
+
+
       Row(){
         Row(){
           Text('日')
-            .fontSize(35)
-            .fontColor(Color.White)
+            .textPattern()
         }
         .width('25%')
         .height('100%')
@@ -20,8 +48,7 @@ export default struct TimeChooser{
 
         Row(){
           Text('周')
-            .fontSize(35)
-            .fontColor(Color.White)
+            .textPattern()
         }
         .width('25%')
         .height('100%')
@@ -29,8 +56,7 @@ export default struct TimeChooser{
 
         Row(){
           Text('月')
-            .fontSize(35)
-            .fontColor(Color.White)
+            .textPattern()
         }
         .width('25%')
         .height('100%')
@@ -38,8 +64,7 @@ export default struct TimeChooser{
 
         Row(){
           Text('年')
-            .fontSize(35)
-            .fontColor(Color.White)
+            .textPattern()
         }
         .width('25%')
         .height('100%')
@@ -49,7 +74,7 @@ export default struct TimeChooser{
 
 
     }
-    .borderRadius(20)
+    .borderRadius(22)
     .height('7%')
     .width('90%')
     .backgroundColor(Color.Black)

@@ -29,8 +29,10 @@ struct StepDetailPage_day {
       List({space:15}){
         //按钮选择
         ListItem(){
-          TimeChooser()
+          TimeChooser({time:0})
         }
+        .width('100%')
+        .margin({top:10})
       }
       .width('90%')
 
