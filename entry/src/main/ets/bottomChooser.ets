@@ -70,8 +70,8 @@ export default struct bottomChooser {
               return
             }
             else {
-              router.replaceUrl({
-                url: 'view/CommunityPage/CommunityPage'
+              router.pushUrl({
+                url:"view/CommunityPage/CommunityPage"
               })
             }
           })
@@ -83,7 +83,6 @@ export default struct bottomChooser {
         Image(this.isMinePage ? $r('app.media.minePage_true') : $r('app.media.minePage_false'))
           .width('5%')
           .height('30%')
-          .autoResize(true)
           .onClick(() => {
             if (this.isMinePage) {
               return

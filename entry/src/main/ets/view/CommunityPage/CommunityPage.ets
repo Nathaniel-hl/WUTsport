@@ -1,5 +1,6 @@
 import bottomChooser from '../../bottomChooser'
 import CommunityServiceCard from './communityServiceCard'
+import router from '@ohos.router'
 
 @Entry
 @Component
@@ -63,6 +64,9 @@ struct CommunityPage {
         ListItem(){
           Image('/view//CommunityPage//temp_activity.png')
             .interpolation(ImageInterpolation.High)
+            .onClick(()=>{
+              router.pushUrl({url:"view/CommunityPage/CommunityPage2"})
+            })
         }
 
         //我的预约文字

@@ -3,13 +3,13 @@
 export default struct ExerciseCard{
   private exercises:exercise[]=[
     new exercise('行走',$r('app.media.walkPic')),
-    new exercise('跑步',$r('app.media.runningPic')),
+    new exercise('跑步',$r("app.media.exercise_run_pic")),
     new exercise('游泳',$r('app.media.swimPic')),
     new exercise('骑行',$r('app.media.bicyclePic')),
     new exercise('舞蹈',$r('app.media.dancePic')),
-    new exercise('瑜伽',$r('app.media.yogaPic')),
-    new exercise('羽毛球',$r('app.media.walkPic')),
-    new exercise('跳绳',$r('app.media.runningPic'))
+    new exercise('瑜伽',$r('app.media.exercise_yoga_pic')),
+    new exercise('冥想',$r('app.media.exercise_meditation_pic')),
+    new exercise('举重',$r("app.media.exercise_weightlifting_pic"))
   ]
   index:number = 2;
 
@@ -22,13 +22,16 @@ export default struct ExerciseCard{
   build(){
     Column(){
       Blank()
+      //运动图片
       Image(this.exercises[this.index].image)
         .padding({top:30})
         .autoResize(true)
         .size({width:'65%',height:'65%'})
         .padding({left:10,right:10})
+        .interpolation(ImageInterpolation.Medium)
 
 
+      //描述
       Row(){
         Text(this.exercises[this.index].name)
           .fontSize(23)

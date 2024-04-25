@@ -12,6 +12,7 @@
     "view/GuidancePagePackage/DataChoicePage_condition",
     "view/GuidancePagePackage/DataChoicePage_like",
     "view/ExercisePagePackage/ExercisePage2",
-    "view/CommunityPage/CommunityPage2"
+    "view/CommunityPage/CommunityPage2",
+    "view/StepDetailPagePackage/StepDetailPage_day"
   ]
 }
