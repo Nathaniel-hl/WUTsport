@@ -1,9 +1,9 @@
-import bottomChooser from '../../bottomChooser'
+//import bottomChooser from '../../bottomChooser'
 import interestCard from './interestCard'
 
 @Entry
 @Component
-struct MinePage {
+export struct MinePage {
   @State message: string = 'Hello World'
 
   @State user_name:string = '李华'
@@ -84,88 +84,63 @@ struct MinePage {
         .borderRadius(20)
 
         //其他页面选项
-        List(){
+        Column(){
           //金币换奖品选项
-          ListItem(){
-            Column(){
-              Row(){
-                Text('金币换奖品')
-                  .fontSize(25)
-                Text(`累计金币${this.user_coin_num}`)
-                  .opacity(0.5)
-                Blank()
-                Text('>')
-                  .fontSize(50)
-              }
-              .width('100%')
-              .height('30%')
-              Divider().width('100%')
-            }
+          Row(){
+            Text('金币换奖品')
+              .fontSize(25)
+            Text(`累计金币${this.user_coin_num}`)
+              .opacity(0.5)
+            Blank()
+            Text('>')
+              .fontSize(50)
           }
+          .width('100%')
+          .height('30%')
+
+          Divider().width('100%')
 
           //运动周月年报告跳转页面
-          ListItem(){
-            Column(){
-              Row(){
-                Text('运动周月年报告')
-                  .fontSize(25)
-                Blank()
-                Text('>')
-                  .fontSize(50)
-              }
-              .width('100%')
-              .height('30%')
-              Divider().width('100%')
-            }
+          Row(){
+            Text('运动周月年报告')
+              .fontSize(25)
+            Blank()
+            Text('>')
+              .fontSize(50)
           }
+          .width('100%')
+          .height('30%')
+
+          Divider().width('100%')
 
           //客服帮助跳转页面
-          ListItem(){
-            Column(){
-              Row(){
-                Text('客服帮助')
-                  .fontSize(25)
-                Blank()
-                Text('>')
-                  .fontSize(50)
-              }
-              .width('100%')
-              .height('30%')
-              Divider().width('100%')
-            }
+          Row(){
+            Text('客服帮助')
+              .fontSize(25)
+            Blank()
+            Text('>')
+              .fontSize(50)
           }
+          .width('100%')
+          .height('30%')
 
-          //问卷调查页面
-          ListItem(){
-            Column(){
-              Row(){
-                Text('问卷调差')
-                  .fontSize(25)
-                Blank()
-                Text('>')
-                  .fontSize(50)
-              }
-              .width('100%')
-              .height('30%')
-              Divider().width('100%')
-            }
-          }
-
-        }.height('50%')
+          Divider().width('100%')
+        }
+        .height('50%')
         .backgroundColor(Color.White)
         .width('90%')
         .borderRadius(20)
 
-
       }
-      .height('65%')
+      .height('60%')
       .backgroundColor($r('app.color.background_color'))
       .width('100%')
       .justifyContent(FlexAlign.SpaceBetween)
 
+
+
       //底部切换页面选择
-      Blank()
-      bottomChooser({ isMinePage: true })
+     //bottomChooser({ isMinePage: true })
     }
     .height('100%')
     .width('100%')
