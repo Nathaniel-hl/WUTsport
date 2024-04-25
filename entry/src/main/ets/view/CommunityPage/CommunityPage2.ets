@@ -1,4 +1,12 @@
 import bottomChooser from '../../bottomChooser'
+import postCard from './postCard'
+
+//文字统一样式
+@Extend(Text) function textPattern(){
+  .fontSize(25)
+  .fontWeight(400)
+}
+
 @Entry
 @Component
 struct CommunityPage2 {
@@ -9,13 +17,69 @@ struct CommunityPage2 {
       //顶部社区title
       Row(){
         Text('社区')
-          .fontSize(30)
+          .textPattern()
       }
-      .height('7%')
+      .height('8%')
       .backgroundColor(Color.White)
       .width('100%')
       .justifyContent(FlexAlign.Center)
 
+      //中间帖子展示页面
+      List({space:10}){
+
+        //社区圈子+去发帖文字
+        ListItem(){
+          Row(){
+            Text('社区圈子')
+              .textPattern()
+
+            Blank()
+
+            Text('去发帖')
+              .textPattern()
+          }
+          .width('100%')
+          .margin({top:10})
+        }
+
+        //我的爱好群
+        ListItem(){
+          Row(){
+            Image('/view/CommunityPage/group_PIc.png')
+              .objectFit(ImageFit.Fill)
+              .width(40)
+
+            Text('我的爱好群')
+              .textPattern()
+              .margin({left:10})
+
+            Blank()
+
+            Text('>')
+              .fontSize(40)
+              .fontWeight(600)
+          }
+          .width('100%')
+          .backgroundColor(Color.White)
+          .borderRadius(20)
+          .height('10%')
+        }
+
+        //推文
+        ListItem(){
+          postCard({index:0})
+        }
+
+        ListItem(){
+          postCard({index:1,isFollowed:false})
+        }
+
+        ListItem(){
+          postCard({index:2})
+        }
+      }
+      .width('90%')
+      .height('77%')
       //底部页面跳转
       Blank()
       bottomChooser({ isCommunityPage: true })

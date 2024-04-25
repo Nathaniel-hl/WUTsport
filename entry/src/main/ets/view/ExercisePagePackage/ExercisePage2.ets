@@ -65,7 +65,7 @@ struct ExercisePage2 {
       Row(){
         Image('/view/ExercisePagePackage/trumpetPic.png')
           .objectFit(ImageFit.Fill)
-          .height('100%')
+          .height('60%')
           .interpolation(ImageInterpolation.Medium)
 
         Text(this.remindMessage).fontSize(20)

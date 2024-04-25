@@ -1,4 +1,5 @@
 import bottomChooser from '../../bottomChooser'
+import CommunityServiceCard from './communityServiceCard'
 
 @Entry
 @Component
@@ -9,6 +10,13 @@ struct CommunityPage {
     Column() {
       //list容器用于页面滑动
       List({space:10}){
+
+        ListItem(){
+          Column(){
+            Blank(30)
+          }
+        }
+
         //显示社区名称
         ListItem(){
           Column() {
@@ -37,8 +45,9 @@ struct CommunityPage {
             .width('90%')
           }
           .width('90%')
-          .padding({top:'10%',left:'5%'})
+          .padding({left:'5%'})
           .backgroundColor(Color.White)
+          .borderRadius(20)
         }
 
         //社区活动预告文字
@@ -49,6 +58,64 @@ struct CommunityPage {
           }
           .width('90%')
         }
+
+        //社区活动预告图片
+        ListItem(){
+          Image('/view//CommunityPage//temp_activity.png')
+            .interpolation(ImageInterpolation.High)
+        }
+
+        //我的预约文字
+        ListItem(){
+          Row(){
+            //喇叭图标
+            Image('/view/ExercisePagePackage/trumpetPic.png')
+              .objectFit(ImageFit.Fill)
+              .height('30')
+              .interpolation(ImageInterpolation.Medium)
+
+            //我的预约文字
+            Text('   我的预约')
+              .fontSize(20)
+
+            Blank()
+
+            //跳转文字
+            Text('>')
+              .fontSize(30)
+              .opacity(0.7)
+          }
+          .width('90%')
+          .backgroundColor(Color.White)
+          .borderRadius(20)
+
+        }
+
+        //社区服务文字
+        ListItem(){
+          Row(){
+            Text('社区服务')
+              .fontSize(25)
+          }
+          .width('90%')
+        }
+
+        //社区服务图标
+        ListItem(){
+          List({space:15}){
+            ListItem(){
+              CommunityServiceCard({index:0})
+            }
+            ListItem(){
+              CommunityServiceCard({index:1})
+            }
+            ListItem(){
+              CommunityServiceCard({index:2})
+            }
+          }
+          .listDirection(Axis.Horizontal)
+        }
+
       }
       .width('100%')
       .height('85%')
