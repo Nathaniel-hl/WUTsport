@@ -1,10 +1,10 @@
-import bottomChooser, { BotIconPattern } from '../../bottomChooser'
-import searchHeader from './searchHeader'
+//import bottomChooser, { BotIconPattern } from '../../bottomChooser'
+import {searchHeader} from './searchHeader'
 import systemDateTime from '@ohos.systemDateTime';
 
 @Entry
 @Component
-struct HomePage {
+export struct HomePage {
   @State message: string = 'Hello World'
   date: Date = new Date() //当前日期
 
@@ -36,7 +36,6 @@ struct HomePage {
         .width('100%')
         .height('30%')
         .padding({ left: 15, right: 15 })
-        .opacity(0.8)
 
       //活动数据+编辑按钮
       Row() {
@@ -59,7 +58,6 @@ struct HomePage {
           .height('100%')
           .autoResize(true)
           .interpolation(ImageInterpolation.Medium)
-          .borderRadius(20)
 
 
         Image($r('app.media.activeDataPic2'))
@@ -68,13 +66,11 @@ struct HomePage {
           .autoResize(true)
           .padding({ left: 10, right: 10 })
           .interpolation(ImageInterpolation.Medium)
-          .borderRadius(20)
-      }.height('20%')
+      }.height('23%')
       .width('100%')
 
       //底端选择栏
-      Blank()
-      bottomChooser({ isHomePage: true });
+      //bottomChooser({ isHomePage: true });
 
     }
     .height('100%')
@@ -85,7 +81,7 @@ struct HomePage {
   }
   //获取当前日期//未实现
   getCurTime() {
-    return '4月26日'
+    return '4月21日'
     try {
       systemDateTime.getCurrentTime(false, (error: Error, time: number) => {
         if (error) {

@@ -10,9 +10,6 @@
     "view/GuidancePagePackage/DataChoice_Gender_Age",
     "view/GuidancePagePackage/DataChoice_height_weight",
     "view/GuidancePagePackage/DataChoicePage_condition",
-    "view/GuidancePagePackage/DataChoicePage_like",
-    "view/ExercisePagePackage/ExercisePage2",
-    "view/CommunityPage/CommunityPage2",
-    "view/StepDetailPagePackage/StepDetailPage_day"
+    "view/GuidancePagePackage/DataChoicePage_like"
   ]
 }
