@@ -85,7 +85,7 @@ struct HomePage {
   }
   //获取当前日期//未实现
   getCurTime() {
-    return '4月21日'
+    return '4月26日'
     try {
       systemDateTime.getCurrentTime(false, (error: Error, time: number) => {
         if (error) {

@@ -17,6 +17,7 @@ struct ExercisePage {
     new listItem('自由运动',20,false),
     new listItem('眼睛保护',5,false),
   ]
+
   build() {
     Column() {
       //首页title
@@ -24,7 +25,7 @@ struct ExercisePage {
         Text('首页')
           .fontSize(30)
       }
-      .height('10%')
+      .height('7%')
       .backgroundColor(Color.White)
       .width('100%')
       .justifyContent(FlexAlign.Center)
@@ -95,7 +96,7 @@ struct ExercisePage {
           }
         )
       }.width('100%')
-      .height('40%')
+      .height('43%')
       .alignListItem(ListItemAlign.Center)
 
 

@@ -11,6 +11,7 @@
     "view/GuidancePagePackage/DataChoice_height_weight",
     "view/GuidancePagePackage/DataChoicePage_condition",
     "view/GuidancePagePackage/DataChoicePage_like",
-    "view/ExercisePagePackage/ExercisePage2"
+    "view/ExercisePagePackage/ExercisePage2",
+    "view/CommunityPage/CommunityPage2"
   ]
 }
