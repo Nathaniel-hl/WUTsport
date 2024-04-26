@@ -6,10 +6,10 @@ export default struct DiseaseCard{
     new disease("抑郁",$r('app.media.depressedPic')),
     new disease("肥胖",$r('app.media.obesityPic')),
     new disease("糖尿病",$r('app.media.hyperglycemiaPic')),
-    new disease("偏头痛",$r('app.media.headachePic')),
+    new disease("偏头痛",$r("app.media.disease_headache_pic")),
     new disease("心脏病",$r('app.media.heartDiseasePic')),
-    new disease("高血压",$r('app.media.heartDiseasePic')),
-    new disease("低血糖",$r('app.media.obesityPic'))
+    new disease("骨质疏松",$r('app.media.disease_bone_pic')),
+    new disease("消化不良",$r("app.media.disease_indigestion_pic"))
   ]
   index:number = 2;
 

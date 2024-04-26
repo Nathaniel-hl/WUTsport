@@ -27,8 +27,6 @@ struct WelcomePage {
         Image($r('app.media.appNamePic'))
           .height('15%')
           .padding({left:'35'})
-          .objectFit(ImageFit.Fill)
-
 
       }
       .height('30%')

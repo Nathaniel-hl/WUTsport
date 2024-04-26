@@ -1,5 +1,5 @@
 @Component
-export struct searchHeader {
+export default struct searchHeader {
   build() {
     Row() {
       Search({ placeholder: '24式太极拳' })
