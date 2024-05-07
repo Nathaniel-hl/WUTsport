@@ -138,7 +138,7 @@ export default struct bottomChooser {
 
         TabContent(){
           ExercisePage()
-          //Text("222222")
+          //Text("222222")a
         }
         .tabBar(this.myBuilder(1,'运动',$r('app.media.exercisePage_false'),$r('app.media.exercisePage_true')))
 
