@@ -1,5 +1,6 @@
 import bottomChooser from '../../bottomChooser'
 import interestCard from './interestCard'
+import router from '@ohos.router'
 
 @Entry
 @Component
@@ -96,6 +97,9 @@ struct MinePage {
                 Blank()
                 Text('>')
                   .fontSize(50)
+                  .onClick(()=>{
+                    router.pushUrl({url:"view/MinePagePackage/CoinExchangeAwardPage"})
+                  })
               }
               .width('100%')
               .height('30%')
@@ -139,11 +143,14 @@ struct MinePage {
           ListItem(){
             Column(){
               Row(){
-                Text('问卷调差')
+                Text('问卷调查')
                   .fontSize(25)
                 Blank()
                 Text('>')
                   .fontSize(50)
+                  .onClick(()=>{
+                    router.replaceUrl({url:  "view/MinePagePackage/IndexPage"})
+                  })
               }
               .width('100%')
               .height('30%')

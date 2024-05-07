@@ -1,5 +1,6 @@
 import bottomChooser from '../../bottomChooser'
 import postCard from './postCard'
+import router from '@ohos.router'
 
 //文字统一样式
 @Extend(Text) function textPattern(){
@@ -14,15 +15,24 @@ struct CommunityPage2 {
 
   build() {
     Column() {
-      //顶部社区title
+      //顶部title和返回按钮
       Row(){
+        Text('<')
+          .fontSize(50)
+          .onClick(()=>{
+            router.back()
+          })
+        Blank()
         Text('社区')
-          .textPattern()
+          .fontSize(30)
+          .fontWeight(400)
+          .padding({right:20})
+        Blank()
+
       }
-      .height('8%')
-      .backgroundColor(Color.White)
       .width('100%')
-      .justifyContent(FlexAlign.Center)
+      .backgroundColor(Color.White)
+      .height('10%')
 
       //中间帖子展示页面
       List({space:10}){

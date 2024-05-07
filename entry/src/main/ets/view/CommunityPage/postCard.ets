@@ -32,7 +32,7 @@ export default struct postCard{
           Button('已关注')
             .fontColor(Color.White)
             .backgroundColor('#00968A')
-            .fontSize(18)
+            .fontSize(15)
             .width('30%')
             .onClick(()=>{this.isFollowed=!this.isFollowed})
         }else {
@@ -64,7 +64,7 @@ export default struct postCard{
           .width('30%')
 
         //活动描述
-        Text('#慧园社区健步走')
+        Text('#智慧社区健步走')
           .fontSize(20)
           .fontWeight(500)
           .margin({left:'5%'})

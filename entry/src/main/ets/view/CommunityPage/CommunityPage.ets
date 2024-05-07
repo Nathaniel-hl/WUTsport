@@ -6,7 +6,7 @@ import router from '@ohos.router'
 @Component
 struct CommunityPage {
   @State message: string = 'Hello World'
-  @State user_community_name:string='慧园社区'
+  @State user_community_name:string='智慧社区'
   build() {
     Column() {
       //list容器用于页面滑动
@@ -62,7 +62,7 @@ struct CommunityPage {
 
         //社区活动预告图片
         ListItem(){
-          Image('/view//CommunityPage//temp_activity.png')
+          Image('/view/CommunityPage/temp_activity.png')
             .interpolation(ImageInterpolation.High)
             .onClick(()=>{
               router.pushUrl({url:"view/CommunityPage/CommunityPage2"})

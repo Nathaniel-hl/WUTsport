@@ -10,8 +10,9 @@ struct WelcomePage {
   aboutToAppear() {
     setTimeout(() => {
       router.replaceUrl({
-        url: 'view/GuidancePagePackage/GuidancePage'
+        url: 'view/GuidancePagePackage/GuidancePage',
       })
+      router.clear()
     }, 1000)
   }
 
@@ -21,12 +22,13 @@ struct WelcomePage {
       //中央slogan
       Column(){
         Image($r('app.media.appIconPic'))
-          .size({width:'150',height:'60%'})
+          .size({width:'150'})
           .interpolation(ImageInterpolation.Medium)
 
         Image($r('app.media.appNamePic'))
           .height('15%')
           .padding({left:'35'})
+          .objectFit(ImageFit.Fill)
 
       }
       .height('30%')

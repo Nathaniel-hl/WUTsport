@@ -16,6 +16,8 @@
     "view/StepDetailPagePackage/StepDetailPage_day",
     "view/StepDetailPagePackage/StepDetailPage_week",
     "view/StepDetailPagePackage/StepDetailPage_month",
-    "view/StepDetailPagePackage/StepDetailPage_year"
+    "view/StepDetailPagePackage/StepDetailPage_year",
+    "view/MinePagePackage/CoinExchangeAwardPage",
+    "view/MinePagePackage/IndexPage"
   ]
 }

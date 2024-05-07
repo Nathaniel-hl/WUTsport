@@ -25,8 +25,9 @@ export default struct DiseaseCard{
       Image(this.diseases[this.index].image)
         .padding({top:30})
         .autoResize(true)
-        .size({width:'65%',height:'65%'})
+        .size({width:'65%'})
         .padding({left:10,right:10})
+        .objectFit(ImageFit.Fill)
 
 
       Row(){

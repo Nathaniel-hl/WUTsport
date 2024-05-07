@@ -6,9 +6,9 @@ export default struct CommunityServiceCard{
     '#FD4D12','#FFAA02']
   index:number=0
   datas:serviceType[]=[
-    new serviceType('运动指导','/view//CommunityPage/service_guidance.png'),
-    new serviceType('紧急求助','/view//CommunityPage/service_urgency.png'),
-    new serviceType('建议','/view//CommunityPage/service_advice.png')
+    new serviceType('运动指导','/view/CommunityPage/service_guidance.png'),
+    new serviceType('紧急求助','/view/CommunityPage/service_urgency.png'),
+    new serviceType('建议','/view/CommunityPage/service_advice.png')
   ]
 
   build(){

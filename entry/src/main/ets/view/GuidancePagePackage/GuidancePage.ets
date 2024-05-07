@@ -5,6 +5,10 @@ import router from '@ohos.router'
 struct GuidancePage {
   @State message: string = 'Hello World'
 
+  aboutToAppear(){
+    router.clear()
+  }
+
   build() {
     Column() {
       Blank()
@@ -27,7 +31,7 @@ struct GuidancePage {
         .size({ height: 50, width: 200 })
         .fontSize(25)
         .onClick(() => {
-          router.replaceUrl({
+          router.pushUrl({
             url: 'view/GuidancePagePackage/DataChoice_Gender_Age'
           })
         })

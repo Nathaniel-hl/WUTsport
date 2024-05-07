@@ -15,6 +15,10 @@
     {
       "name": "themes_color",
       "value": "#FE8109"
+    },
+    {
+      "name": "my_Coins_color",
+      "value": "#EED9BC"
     }
   ]
 }

@@ -5,6 +5,9 @@ import router from '@ohos.router'
 struct Index {
   @State message: string = 'Hello World'
 
+  aboutToAppear(){
+
+  }
   build() {
     Row() {
       Column() {
