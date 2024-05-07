@@ -18,6 +18,9 @@ struct WelcomePage {
 
   build() {
     Column() {
+      Text('这是软工实验git测试')
+        .fontSize(30)
+      
       Blank('30%')
       //中央slogan
       Column(){
